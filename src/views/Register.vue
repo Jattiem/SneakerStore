@@ -1,5 +1,7 @@
 <template>
-  Register
+  <section class="register vh-100">
+    <h2>Register</h2>
+  </section>
 </template>
 
 <script>

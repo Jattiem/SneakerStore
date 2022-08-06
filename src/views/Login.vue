@@ -1,5 +1,7 @@
 <template>
-  <h2>Login</h2>
+  <section class="login vh-100">
+     <h2>Login</h2>
+  </section>
 </template>
 
 <script>

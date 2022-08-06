@@ -1,5 +1,7 @@
 <template>
-  
+    <section class="home vh-100">
+        <h2>Home</h2>
+    </section>
 </template>
 
 <script>

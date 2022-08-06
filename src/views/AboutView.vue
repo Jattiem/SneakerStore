@@ -1,5 +1,7 @@
 <template>
-  <h2>About</h2>
+  <section class="about vh-100">
+    <h2>About</h2>
+  </section>
 </template>
 
 <script>
