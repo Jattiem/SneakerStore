@@ -11,7 +11,7 @@ const app = express();
 
 const router = express.Router();
 
-const port = parseInt(process.env.Port) || 4000;
+const port = parseInt(process.env.PORT);
 
 app.listen(port, () => {
     console.log(`Server is running on port ${port}`);
