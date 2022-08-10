@@ -14,7 +14,7 @@ const router = express.Router();
 const port = parseInt(process.env.PORT);
 
 app.listen(port, () => {
-    console.log(`Server is running on port ${port}`);
+    console.log(`Server is running on ports ${port}`);
 });
 
 // add cors to the app variable
