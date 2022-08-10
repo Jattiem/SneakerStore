@@ -33,9 +33,14 @@ app.use((req, res, next)=>{
     next();
 });
 
+
 router.get('/', (req, res) => {
-    res.status(200).sendFile('./views/index.html', {root:__dirname} );
-});
+    res.send('Hello World!')
+  })
+
+// router.get('/', (req, res) => {
+//     res.status(200).sendFile('./views/index.html', {root:__dirname} );
+// });
 
 // login and register
 // db.connect( (err) => {
