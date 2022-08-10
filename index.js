@@ -26,15 +26,26 @@ app.use(router, cors(), express.json(),
 // allow access to fetch data from the api externally by  Seting header
 app.use((req, res, next)=>{
     res.setHeader("Access-Control-Allow-Origin", "*");
+    res.setHeader("Access-Control-Allow-Headers", "*");
     res.setHeader("Access-Control-Allow-Credentials", "true");
     res.setHeader("Access-Control-Allow-Methods", "GET,HEAD,OPTIONS,POST,PUT");
     res.setHeader("Access-Control-Allow-Headers", "Access-Control-Allow-Headers, Origin,Accept, X-Requested-With, Content-Type, Access-Control-Request-Method, Access-Control-Request-Headers");
     next();
 });
 
-router.get('/', (req, res) => {
-    res.sendFile('./  ')
-});
+app.get('/', (req, res) => {
+    res.sendFile('./views/index.js')
+  })
+
+
+// login and register
+// db.connect( (err) => {
+//     if(err){
+//         console.log(err)
+//     } else{
+//         console.log('mySQL connected...')
+//     }
+// })
 
 // Get all products
 router.get("/products", (req, res) => {
