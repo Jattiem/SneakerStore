@@ -33,10 +33,9 @@ app.use((req, res, next)=>{
     next();
 });
 
-app.get('/', (req, res) => {
-    res.sendFile('./views/index.js')
-  })
-
+router.get('/', (req, res) => {
+    res.status(200).sendFile('./views/index.html', {root:__dirname} );
+});
 
 // login and register
 // db.connect( (err) => {
