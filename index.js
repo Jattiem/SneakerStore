@@ -19,16 +19,6 @@ app.listen(port, () => {
     console.log(`Server is running on port ${port}`);
 });
 
-// add cors to the app variable
-app.use(
-    router,
-    cors(),
-    express.json(),
-    express.urlencoded({
-        extended: true,
-    })
-);
-
 // allow access to fetch data from the api externally by  Seting header
 app.use((req, res, next) => {
     res.setHeader("Access-Control-Allow-Origin", "*");
@@ -41,6 +31,16 @@ app.use((req, res, next) => {
     );
     next();
 });
+// add cors to the app variable
+app.use(
+    router,
+    cors(),
+    express.json(),
+    express.urlencoded({
+        extended: true,
+    })
+);
+
 
 // HOME PAGE ROUTER
 router.get("/", (req, res) => {
