@@ -9,20 +9,20 @@ const connection = createConnection({
     multipleStatements: true
 });
 
-connection.connect( (err, conn)=> {
-    try {
-        if(err) throw err
-    }catch(e) {
-        const msg = e.message;
-        console.log(msg);
-    }
-});
-connection.on('error', (err)=> {
-    if(err.code === 'PROTOCOL_CONNECTION_LOST'){
-        handleConnection();
-    }else {
-        throw err;
-    }
-});
+// connection.connect( (err, conn)=> {
+//     try {
+//         if(err) throw err
+//     }catch(e) {
+//         const msg = e.message;
+//         console.log(msg);
+//     }
+// });
+// connection.on('error', (err)=> {
+//     if(err.code === 'PROTOCOL_CONNECTION_LOST'){
+//         handleConnection();
+//     }else {
+//         throw err;
+//     }
+// });
 
 module.exports = connection;
