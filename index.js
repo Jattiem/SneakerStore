@@ -63,15 +63,18 @@ router.get("/register", (req, res) => {
     });
 });
 
-// router.get('/products', (req, res) => {
-//     sendFile('./views/products.html', {root:__dirname})
-// });
+// PRODUCTS PAGE ROUTER
+router.get("/productss", (req, res) => {
+    res.status(200).sendFile("./views/products.html", {
+        root: __dirname
+    });
+});
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 // LOGIN
 
-router.patch("/login", bodyParser.json(), (req, res) => {
+app.post("/login", bodyParser.json(), (req, res) => {
     // const user = bd.email;
     // const password = bd.userpassword;
     const strQry = `
@@ -87,20 +90,10 @@ router.patch("/login", bodyParser.json(), (req, res) => {
                     status: 200,
                     results: key,
                 });
-                res.redirect(200, "/");
+                res.sendFile("/productss");
             } else res.send("failed");
         });
-        // res.json({
-        //     status: 200,
-        //     results: results
-        // })
     });
-    /*
-Have to compare: 
-compare(req.body.userpassword, results.userpassword)
-======
-require('crypto').randomBytes(64).toString('hex')
-*/
 });
 
 // USER REGISTRATION
@@ -206,20 +199,6 @@ router.delete("/users/:id", (req, res) => {
 
 // GET ALL PRODUCTS
 
-// router.get("/products", (req, res) => {
-//     // Query
-//     const strQry = `
-//     SELECT product_id, title, category, description, img, price, created_by
-//     FROM products;
-//     `;
-//     db.query(strQry, (err, results) => {
-//         if (err) throw err;
-//         res.json({
-//             status: 200,
-//             results: results,  
-//         });
-//     });
-// });
 router.get("/products", (req, res) => {
     // Query
     const strQry = `
